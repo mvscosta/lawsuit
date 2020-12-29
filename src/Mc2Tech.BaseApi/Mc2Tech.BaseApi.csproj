@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Mc2Tech.BaseApi_Server-00c18a87-0f79-4751-858f-1f1519901dc6</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\repos\Mc2Tech\Mc2Tech.BaseApi\Mc2Tech.BaseApi.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="SimpleSoft.AspNetCore.Middleware.Metadata" Version="1.1.1" />
+    <PackageReference Include="SimpleSoft.Mediator" Version="2.0.0" />
+    <PackageReference Include="SimpleSoft.Mediator.Microsoft.Extensions" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2Tech.AuditPipeline\Mc2Tech.Pipelines.csproj" />
+    <ProjectReference Include="..\Mc2Tech.Crosscutting\Mc2Tech.Crosscutting.csproj" />
+    <ProjectReference Include="..\Mc2Tech.FluentSwagger\Mc2Tech.FluentSwagger.csproj" />
+  </ItemGroup>
+
+</Project>

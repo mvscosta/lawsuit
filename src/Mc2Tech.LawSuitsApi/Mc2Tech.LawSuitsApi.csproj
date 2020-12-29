@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <UserSecretsId>aspnet-Mc2Tech.BaseApi_Server-00c18a87-0f79-4751-858f-1f1519901dc6</UserSecretsId>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <Authors>Marcus Vinicius da Silva Costa</Authors>
+    <Company>Mc2Tech</Company>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="EFCoreSecondLevelCacheInterceptor" Version="2.1.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="SimpleSoft.AspNetCore.Middleware" Version="1.1.1" />
+    <PackageReference Include="SimpleSoft.Mediator" Version="2.0.0" />
+    <PackageReference Include="SimpleSoft.Mediator.Microsoft.Extensions" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.6.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\SituationDb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2Tech.BaseApi\Mc2Tech.BaseApi.csproj" />
+    <ProjectReference Include="..\Mc2Tech.AuditPipeline\Mc2Tech.Pipelines.csproj" />
+    <ProjectReference Include="..\Mc2Tech.FluentSwagger\Mc2Tech.FluentSwagger.csproj" />
+    <ProjectReference Include="..\Mc2Tech.PersonsApi.ServiceClient\Mc2Tech.PersonsApi.ServiceClient.csproj" />
+  </ItemGroup>
+</Project>
