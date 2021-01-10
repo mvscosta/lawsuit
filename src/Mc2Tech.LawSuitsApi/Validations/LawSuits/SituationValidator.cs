@@ -47,7 +47,7 @@ namespace Mc2Tech.LawSuitsApi.Validations.LawSuits
 
             var failure = new ValidationFailure(
                 context.PropertyName,
-                $"{context.PropertyName} '{value}' invalid situation"
+                $"{context.PropertyName} '{value}' invalid situation, not found or is a closed state."
             );
 
             failure.ErrorCode = "SituationValidator";
@@ -75,6 +75,7 @@ namespace Mc2Tech.LawSuitsApi.Validations.LawSuits
             var exists = await dbset
                 .AnyAsync(p => 
                     p.Id == value.Value 
+                    && p.IsClosed == false
                 , ct);
 
             return exists;
