@@ -2,6 +2,14 @@
 
 > NETCORE 3.1 + EFCORE + Migrations + Pipelines + CQRS Patterns + AutoMapper + FluentAssertions + Swagger + Oauth2 + XUnit + Moq + AutoFixture
 
+Ambiente de demonstração publicado:
+	https://mc2tech-softplan-personsapi.azurewebsites.net/swagger
+	https://mc2tech-softplan-lawsuitsapi.azurewebsites.net/swagger
+
+Usuário e senha para autenticação:
+	Usuário: softplan@mc2tech.com.br
+	Senha: 2a:WuS"9{GHbj
+
 ### Características do projeto:
 * Autenticação utilizando Oauth2 via SSO do Azure AD
 * SimpleSoft.Mediator para orquestração dos Pipelines
