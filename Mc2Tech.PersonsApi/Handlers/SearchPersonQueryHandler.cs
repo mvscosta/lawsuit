@@ -13,22 +13,22 @@ using System.Threading.Tasks;
 
 namespace Mc2Tech.PersonsApi.Handlers
 {
-    public class SearchPersonQueryHandler : IQueryHandler<SearchPersonsQuery, IEnumerable<Person>>
+    public class SearchPersonQueryHandler : IQueryHandler<SearchPersonsQuery, IEnumerable<PersonBasicInformation>>
     {
-        private readonly IQueryable<PersonEntity> _lawSuits;
+        private readonly IQueryable<PersonEntity> _persons;
         private readonly ILawSuitsApiServiceClient _lawSuitsApiServiceClient;
         private readonly IMapper _mapper;
 
         public SearchPersonQueryHandler(ApiDbContext context, IMapper mapper, ILawSuitsApiServiceClient lawSuitsApiServiceClient)
         {
-            _lawSuits = context.Set<PersonEntity>();
+            _persons = context.Set<PersonEntity>();
             _lawSuitsApiServiceClient = lawSuitsApiServiceClient;
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Person>> HandleAsync(SearchPersonsQuery query, CancellationToken ct)
+        public async Task<IEnumerable<PersonBasicInformation>> HandleAsync(SearchPersonsQuery query, CancellationToken ct)
         {
-            var filter = _lawSuits;
+            var filter = _persons;
 
             if (!string.IsNullOrEmpty(query.Name))
                 filter = filter.Where(p => p.Name.Contains(query.Name));
@@ -52,7 +52,7 @@ namespace Mc2Tech.PersonsApi.Handlers
                 .OrderBy(p => p.Name)
                 .Skip(skip)
                 .Take(take)
-                .ProjectTo<Person>(configuration: _mapper.ConfigurationProvider)
+                .ProjectTo<PersonBasicInformation>(configuration: _mapper.ConfigurationProvider)
                 .ToListAsync(ct);
 
             return result;

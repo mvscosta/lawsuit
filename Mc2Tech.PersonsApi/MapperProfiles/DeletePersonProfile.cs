@@ -2,7 +2,7 @@
 using Mc2Tech.PersonsApi.Model;
 using Mc2Tech.PersonsApi.ViewModel.Delete;
 
-namespace Mc2Tech.MapperProfiles.LawSuits
+namespace Mc2Tech.PersonsApi.MapperProfiles
 {
     public class DeletePersonProfile : Profile
     {

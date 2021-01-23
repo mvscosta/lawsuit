@@ -1,8 +1,7 @@
-﻿using Mc2Tech.Crosscutting.Interfaces.LawSuits;
+﻿using Mc2Tech.Crosscutting.Interfaces.Persons;
 using Mc2Tech.Crosscutting.Interfaces.ServiceClient;
 using Mc2Tech.LawSuitsApi.DAL;
 using Mc2Tech.LawSuitsApi.Model.DALEntity;
-using Mc2Tech.LawSuitsApi.Model.LawSuits;
 using Mc2Tech.LawSuitsApi.ViewModel.LawSuits;
 using SimpleSoft.Mediator;
 using System;
@@ -38,7 +37,7 @@ namespace Mc2Tech.LawSuitsApi.Handlers.LawSuits
                 });
 
                 IPersonDto personBasicInformation = await _personsApiServiceClient.GetPersonBasicInformationAsync(httpPayload, responsibleId, ct);
-                
+
                 sbEmail.AppendLine($"call Send Email {personBasicInformation.Email}");
                 sbEmail.AppendLine($"Você foi cadastrado como envolvido no processo de número ${evt.UnifiedProcessNumber}");
             }

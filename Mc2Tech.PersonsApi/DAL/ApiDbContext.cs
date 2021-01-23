@@ -1,10 +1,11 @@
 ﻿using Mc2Tech.Crosscutting.Enums;
+using Mc2Tech.Crosscutting.Interfaces;
 using Mc2Tech.PersonsApi.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mc2Tech.PersonsApi.DAL
 {
-    public class ApiDbContext : DbContext
+    public class ApiDbContext : DbContext, IBaseDbContext
     {
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
         {
@@ -48,8 +49,16 @@ namespace Mc2Tech.PersonsApi.DAL
                     .HasDefaultValue(ObjectStatus.Active);
 
             });
-         
+
             base.OnModelCreating(builder);
+        }
+
+        public void Seed()
+        {
+            if (this.ChangeTracker.HasChanges())
+            {
+                this.SaveChanges();
+            }
         }
     }
 }

@@ -8,8 +8,6 @@ namespace Mc2Tech.PersonsApi.ViewModel.Update
 
         public string Name { get; set; }
 
-        public string Cpf { get; set; }
-
         public string Email { get; set; }
 
         public byte[] Photo { get; set; }

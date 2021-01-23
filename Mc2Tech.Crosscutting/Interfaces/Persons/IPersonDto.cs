@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mc2Tech.Crosscutting.Interfaces.LawSuits
+namespace Mc2Tech.Crosscutting.Interfaces.Persons
 {
     public interface IPersonDto
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Mc2Tech.PersonsApi.ViewModel.Get
 {
-    public class SearchPersonsQuery : Query<IEnumerable<Person>>
+    public class SearchPersonsQuery : Query<IEnumerable<PersonBasicInformation>>
     {
         public string Name { get; set; }
 

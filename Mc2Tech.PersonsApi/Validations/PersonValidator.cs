@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Mc2Tech.PersonsApi.Model;
 
-namespace Mc2Tech.Validator.LawSuits
+namespace Mc2Tech.PersonsApi.Validations
 {
     public class PersonValidator : AbstractValidator<Person>
     {

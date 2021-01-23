@@ -1,10 +1,9 @@
-﻿using Mc2Tech.PersonsApi.DAL;
-using Mc2Tech.PersonsApi.ViewModel.Update;
+﻿using Mc2Tech.PersonsApi.ViewModel.Update;
 using SimpleSoft.Mediator;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mc2Tech.Handlers.LawSuits
+namespace Mc2Tech.PersonsApi.Handlers
 {
     public class UpdatedPersonEventHandler : IEventHandler<UpdatedPersonEvent>
     {
@@ -17,7 +16,7 @@ namespace Mc2Tech.Handlers.LawSuits
             //return _context.Set<EventEntity>().AddAsync(new EventEntity
             //{
             //    ExternalReference = evt.ExternalReference,
-            //    Name = nameof(CreatedLawSuitEvent),
+            //    Name = nameof(CreatedPersonEvent),
             //    Payload = JsonSerializer.Serialize(evt),
             //    CreatedOn = evt.CreatedOn,
             //    CreatedBy = evt.CreatedBy
