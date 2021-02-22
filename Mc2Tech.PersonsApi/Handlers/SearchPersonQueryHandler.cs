@@ -28,7 +28,8 @@ namespace Mc2Tech.PersonsApi.Handlers
 
         public async Task<IEnumerable<PersonBasicInformation>> HandleAsync(SearchPersonsQuery query, CancellationToken ct)
         {
-            var filter = _persons;
+            var filter = _persons
+                .Where(p => p.Status != Crosscutting.Enums.ObjectStatus.LogicalDeleted);
 
             if (!string.IsNullOrEmpty(query.Name))
                 filter = filter.Where(p => p.Name.Contains(query.Name));

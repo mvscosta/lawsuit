@@ -26,7 +26,13 @@ namespace Mc2Tech.PersonsApi.Handlers
 
         public async Task<List<Guid>> HandleAsync(GetPersonIdsByPersonNameQuery query, CancellationToken ct)
         {
-            var filter = _persons.Where(p => p.Name.Contains(query.PersonName)).Select(p => p.Id.Value);
+            var filter = _persons
+                .Where(p => 
+                    p.Name.Contains(query.PersonName)
+                    && p.Status != Crosscutting.Enums.ObjectStatus.LogicalDeleted
+                    && p.Status != Crosscutting.Enums.ObjectStatus.PendingDelete
+                )
+                .Select(p => p.Id.Value);
 
             var result = await filter
                 .ToListAsync(ct);

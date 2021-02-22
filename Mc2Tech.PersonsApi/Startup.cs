@@ -2,10 +2,8 @@ using AutoMapper;
 using EFCoreSecondLevelCacheInterceptor;
 using FluentValidation;
 using Mc2Tech.BaseApi;
-using Mc2Tech.Crosscutting.Interfaces.ServiceClient;
 using Mc2Tech.Crosscutting.ServiceClients;
 using Mc2Tech.FluentSwagger.Config;
-using Mc2Tech.LawSuitsApi.ServiceClient;
 using Mc2Tech.PersonsApi.DAL;
 using Mc2Tech.Pipelines.Audit;
 using Mc2Tech.Pipelines.Audit.DAL;
@@ -90,8 +88,6 @@ namespace Mc2Tech.PersonsApi
             //        warn.Ignore(InMemoryEventId.TransactionIgnoredWarning);
             //    });
             //});
-
-            services.AddScoped<ILawSuitsApiServiceClient>(provider => new LawSuitsApiServiceClient(ApiEndpoints, provider.GetService<IHttpClientFactory>()));
 
             services.AddHttpClient(ApiEndpoints.LawSuitsApiHttpClientName, c =>
             {

@@ -4,9 +4,9 @@ using Mc2Tech.PersonsApi.ViewModel.Delete;
 
 namespace Mc2Tech.PersonsApi.Validations.Delete
 {
-    public class DeletePersonCommandValidator : AbstractValidator<DeletePersonCommand>
+    public class SoftDeletePersonCommandValidator : AbstractValidator<SoftDeletePersonCommand>
     {
-        public DeletePersonCommandValidator()
+        public SoftDeletePersonCommandValidator()
         {
             RuleFor(p => p.Data.PersonId)
                 .NotEmpty();

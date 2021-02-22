@@ -212,11 +212,11 @@ namespace Mc2Tech.PersonsApi.Controller
         [HttpDelete("{personId:guid}", Name = "Delete")]
         public async Task DeleteAsync([FromRoute] Guid personId, CancellationToken ct)
         {
-            await _mediator.SendAsync(new DeletePersonCommand
+            await _mediator.SendAsync(new SoftDeletePersonCommand
             {
                 AccessToken = base.GetAccessToken().Parameter,
 
-                Data = new DeletePersonModel() { PersonId = personId },
+                Data = new SoftDeletePersonModel() { PersonId = personId },
                 CreatedBy = User.Identity.Name
             }, ct);
         }

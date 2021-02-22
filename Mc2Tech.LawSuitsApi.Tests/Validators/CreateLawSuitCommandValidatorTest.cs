@@ -400,7 +400,7 @@ namespace Mc2Tech.LawSuitsApi.Tests.Validators
         [Fact]
         public void CreateLawSuit_WithMoreThan3Responsible_ValidationError()
         {
-            var validator = CreateValidator("CreateLawSuit_WithDuplicatedResponsible_ValidationError");
+            var validator = CreateValidator("CreateLawSuit_WithMoreThan3Responsible_ValidationError");
 
             var fixture = CreateFixture();
 

@@ -35,7 +35,6 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mc2Tech.LawSuitsApi.ServiceClient\Mc2Tech.LawSuitsApi.ServiceClient.csproj" />
     <ProjectReference Include="..\Mc2Tech.BaseApi\Mc2Tech.BaseApi.csproj" />
     <ProjectReference Include="..\Mc2Tech.AuditPipeline\Mc2Tech.Pipelines.csproj" />
     <ProjectReference Include="..\Mc2Tech.FluentSwagger\Mc2Tech.FluentSwagger.csproj" />
